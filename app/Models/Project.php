@@ -2,10 +2,26 @@
 
 namespace App\Models;
 
+use App\Scopes\UserScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
     use HasFactory;
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new UserScope);
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function tasks() {
+        return $this->hasMany(Task::class);
+    }
 }
