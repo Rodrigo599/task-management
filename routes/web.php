@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +23,5 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('/tasks', App\Http\Controllers\TaskController::class);
+Route::resource('/tasks', TaskController::class);
+Route::resource('/projects', ProjectController::class);

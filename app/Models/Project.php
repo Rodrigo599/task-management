@@ -10,6 +10,11 @@ class Project extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'user_id'
+    ];
+
     protected static function boot()
     {
         parent::boot();

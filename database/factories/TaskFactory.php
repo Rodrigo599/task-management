@@ -19,6 +19,7 @@ class TaskFactory extends Factory
             'user_id' => User::factory(),
             'project_id' => Project::factory(),
             'name' => $this->faker->word(),
+            'priority' => 0
         ];
     }
 }
