@@ -17,17 +17,17 @@
         </thead>
         <tbody wire:sortable="updateTaskOrder">
         @forelse($tasks as $task)
-            <tr wire:sortable.item="{{ $task->id }}" wire:key="task-{{ $task->id }}" style="cursor: pointer; border: solid thin;" data-toggle="collapse" data-target  ="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <td wire:sortable.handle data-toggle="tooltip" style="cursor: move; width: 20px" data-placement="top" title="Click and drag to sort task"><i class="fas fa-grip-vertical" style="font-size: 20px;"></i></td>
+            <tr wire:sortable.item="{{ $task->id }}" wire:key="task-{{ $task->id }}" style="cursor: pointer; border: solid thin; font-size: 16px; vertical-align: middle" data-toggle="collapse" data-target  ="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <td wire:sortable.handle data-toggle="tooltip" style="cursor: move; width: 20px; padding-top: 11px" data-placement="top" title="Click and drag to sort task"><i class="fas fa-grip-vertical" style="font-size: 24px;"></i></td>
                 <td wire:sortable.handle>{{$task->priority}}</td>
                 <td wire:sortable.handle>{{$task->name}}</td>
                 <td>
                     <div class="float-left">
-                        <a class="btn btn-sm btn-warning" wire:click="edit({{ $task->id }})" title="Edit Task">
-                            <i class="fas fa-edit"></i>
+                        <a class="btn btn btn-warning " wire:click="edit({{ $task->id }})" title="Edit Task">
+                            <i class="fas fa-edit"></i> Edit
                         </a>
-                        <a class="btn btn-sm btn-danger" wire:click="delete({{ $task->id }})" title="Delete Task">
-                            <i class="fas fa-trash"></i>
+                        <a class="btn btn btn-danger" wire:click="delete({{ $task->id }})" title="Delete Task">
+                            <i class="fas fa-trash"></i> Delete
                         </a>
                     </div>
                 </td>
@@ -37,7 +37,7 @@
                 <td class="justify-content-center" colspan="4">No tasks added in this project...</td>
             </tr>
         @endforelse
-        <tr style="cursor: pointer" wire:click="create()">
+        <tr style="cursor: pointer; font-size:16px" wire:click="create()">
             <td colspan="4"><i class="fas fa-plus"></i>&nbsp&nbsp Add Task</td>
         </tr>
         </tbody>
