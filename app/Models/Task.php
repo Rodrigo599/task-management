@@ -10,6 +10,13 @@ class Task extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'user_id',
+        'project_id',
+        'priority'
+    ];
+
     protected static function boot()
     {
         parent::boot();

@@ -18,7 +18,7 @@ class CreateTasksTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('project_id')->constrained();
             $table->string('name');
-            $table->integer('priority');
+            $table->integer('priority')->default(0);
             $table->timestamps();
         });
     }
