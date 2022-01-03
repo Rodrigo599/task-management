@@ -19,7 +19,7 @@ class Tasks extends Component
     public function mount()
     {
         $this->project = Project::first();
-        $this->tasks = $this->project->tasks->sortBy('priority');
+        $this->tasks = $this->project ? $this->project->tasks->sortBy('priority') : null;
     }
 
     public function render()
